@@ -21,7 +21,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
-    @RequestMapping(method = RequestMethod.GET, path = "/greeting", produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, path = "/", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "name", value = "User's name", required = false, dataType = "string", paramType = "query", defaultValue = "Andy")
     })
