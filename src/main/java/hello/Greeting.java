@@ -65,9 +65,9 @@ public class Greeting {
 				Statement stmt = connection.createStatement();
 	            ResultSet rs;
 	 
-	            rs = stmt.executeQuery("SELECT msg FROM helloworld WHERE id = 1");
+	            rs = stmt.executeQuery("SELECT id,msg FROM helloworld");
 	            while ( rs.next() ) {
-	            	msg = rs.getString("msg");   
+	            	msg+ = "id: " + rs.getString("id") + ", msg: " + rs.getString("msg") + "\n";   
 	            }
 	            connection.close();
 	            return msg;
