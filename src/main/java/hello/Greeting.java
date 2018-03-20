@@ -1,7 +1,9 @@
 package hello;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
@@ -59,6 +61,19 @@ public class Greeting {
 
 		if (connection != null) {
 			msg = "You made it, take control your database now!";
+			try {
+				Statement stmt = connection.createStatement();
+	            ResultSet rs;
+	 
+	            rs = stmt.executeQuery("SELECT Lname FROM Customers WHERE Snum = 2001");
+	            while ( rs.next() ) {
+	                String lastName = rs.getString("Lname");
+	                System.out.println(lastName);
+	            }
+	            connection.close();
+			}catch (Exception e) {
+				msg = "Cannot select from your database now!";
+			}
 		} else {
 			msg = "Failed to make connection!";
 		}
