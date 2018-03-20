@@ -34,4 +34,17 @@ public class GreetingController {
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
+    
+    @ApiOperation(value = "getGreeting", nickname = "getGreeting")
+    @RequestMapping(method = RequestMethod.GET, path = "/db", produces = "application/json")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = Greeting.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
+    public String getCon(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new Greeting().testConn();
+    }
+    
 }
