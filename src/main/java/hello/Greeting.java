@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import org.postgresql.Driver;
+//import org.postgresql.Driver;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -65,12 +65,12 @@ public class Greeting {
 				Statement stmt = connection.createStatement();
 	            ResultSet rs;
 	 
-	            rs = stmt.executeQuery("SELECT Lname FROM Customers WHERE Snum = 2001");
+	            rs = stmt.executeQuery("SELECT msg FROM helloworld WHERE id = 1");
 	            while ( rs.next() ) {
-	                String lastName = rs.getString("Lname");
-	                System.out.println(lastName);
+	            	msg = rs.getString("msg");   
 	            }
 	            connection.close();
+	            return msg;
 			}catch (Exception e) {
 				msg = "Cannot select from your database now!";
 			}

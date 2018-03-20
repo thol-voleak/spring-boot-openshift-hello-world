@@ -45,10 +45,10 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-	    <groupId>org.postgresql</groupId>
-	    <artifactId>postgresql</artifactId>
-	    <version>42.2.0</version>
-</dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.0</version>
+		</dependency>
     </dependencies>
 
     <properties>
