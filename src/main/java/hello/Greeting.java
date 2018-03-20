@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import org.postgresql.Driver;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -79,4 +79,12 @@ public class Greeting {
 		}
 		return msg;
     }
+    public static void main(String[] args) {
+    	System.out.println("xxxxxxxxxxx");
+    	try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 }
