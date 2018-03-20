@@ -79,12 +79,10 @@ public class Greeting {
 		}
 		return msg;
     }
+    /*
     public static void main(String[] args) {
     	System.out.println("xxxxxxxxxxx");
-    	try {
-			Class.forName("org.postgresql.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+    	new Greeting().testConn();
 	}
+	*/
 }
