@@ -65,9 +65,10 @@ public class Greeting {
 				Statement stmt = connection.createStatement();
 	            ResultSet rs;
 	 
-	            rs = stmt.executeQuery("SELECT id,msg FROM helloworld");
+	            rs = stmt.executeQuery("SELECT id,msg FROM helloworld order by id");
 	            while ( rs.next() ) {
-	            	msg = msg + "id: " + rs.getString("id") + ", msg: " + rs.getString("msg") + "\n";   
+			msg = "";
+	            	msg = msg + "=> id: " + rs.getString("id") + ", msg: " + rs.getString("msg") + "\n";   
 	            }
 	            connection.close();
 	            return msg;
