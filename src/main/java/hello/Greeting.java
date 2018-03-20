@@ -19,7 +19,7 @@ public class Greeting {
     
     public Greeting(long id, String content) {
         this.id = id;
-        this.content = content;
+        this.content = system.getevn("HELLOWORLD-DB_SERVICE_HOST");
     }
 
     public long getId() {
