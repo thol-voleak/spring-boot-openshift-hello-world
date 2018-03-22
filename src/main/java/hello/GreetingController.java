@@ -32,7 +32,8 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+        //return new Greeting(counter.incrementAndGet(), String.format(template, name));
+        return new Greeting(1, String.format(template, name));
     }
     
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
