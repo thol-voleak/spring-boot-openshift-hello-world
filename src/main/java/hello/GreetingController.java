@@ -33,7 +33,7 @@ public class GreetingController {
             @ApiResponse(code = 500, message = "Failure")})
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         //return new Greeting(counter.incrementAndGet(), String.format(template, name));
-        return new Greeting(1, String.format(template, name));
+        return new Greeting();
     }
     
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
