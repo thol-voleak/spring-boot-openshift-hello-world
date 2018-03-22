@@ -1,6 +1,8 @@
 package hello;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Greeting {
     private final long id;
-    private final String content;
+    private String content;
 
     public Greeting() {
     	this.id = 0;
@@ -19,7 +21,12 @@ public class Greeting {
     
     public Greeting(long id, String content) {
         this.id = id;
-        this.content = content;
+        try {
+			this.content = InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			this.content = content;
+		}
     }
 
     public long getId() {
