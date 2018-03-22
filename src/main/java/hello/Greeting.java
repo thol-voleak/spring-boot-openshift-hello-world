@@ -15,8 +15,13 @@ public class Greeting {
     private String content;
 
     public Greeting() {
-    	this.id = 0;
-    	this.content = "x";
+    	this.id = 1;
+    	try {
+		this.content = InetAddress.getLocalHost().getHostName();
+	} catch (UnknownHostException e) {
+		// TODO Auto-generated catch block
+		this.content = content;
+	}
     }
     
     public Greeting(long id, String content) {
