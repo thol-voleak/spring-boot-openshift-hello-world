@@ -1,12 +1,8 @@
 node {
   def app
-  tools {
-    maven 'MAVEN_HOME'
-  }
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean package'
         app = docker.build("s2i/helloworld")
       }
     }
