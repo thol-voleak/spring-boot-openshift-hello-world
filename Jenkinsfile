@@ -1,5 +1,5 @@
-pipeline {
-  agent any
+node {
+  def app
   tools {
     maven 'MAVEN_HOME'
   }
@@ -7,6 +7,18 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn clean package'
+        app = docker.build("s2i/helloworld")
+      }
+    }
+    stage('Unit Test'){
+      app.inside {
+        sh 'echo "Tests passed"'
+      }
+    }
+    stage('Push image'){
+      docker.withRegistry('https://docker-registry-default.apps.master-ocp.truemoney.com.kh','docker-credentials'){
+        app.push("${env.BUILD_NUMBER}")
+        app.push("dev")
       }
     }
     stage('Deploy to Development') {
