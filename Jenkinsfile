@@ -1,6 +1,6 @@
 pipeline {
     tools{
-        maven="MAVEN_HOME"
+        maven 'MAVEN_HOME'
     }
     stages{
         stage('Build Maven'){
