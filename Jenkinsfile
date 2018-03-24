@@ -1,25 +1,10 @@
-node {
-   tools {
-     maven 'MAVEN_HOME'
-     docker 'DOCKER_HOME'
-   }
-  def app
-  stage('Build') {
-     app = docker.build("s2i/helloworld")
-  }
-  stage('Unit Test'){
-    app.inside {
-      sh 'echo "Tests passed"'
+node("docker") {
+    docker.withRegistry('https://docker-registry-default.apps.master-ocp.truemoney.com.kh', 'docker-credentials') {
+        stage "build"
+        def app = docker.build "your-project-name"
+    
+        stage "publish"
+        app.push 'master'
+        app.push "${commit_id}"
     }
-  }
-  stage('Push image'){
-    docker.withRegistry('https://docker-registry-default.apps.master-ocp.truemoney.com.kh','docker-credentials'){
-      app.push("${env.BUILD_NUMBER}")
-      app.push("dev")
-    }
-  }
-  stage('Deploy to Development') {
-    sh 'oc login -u$USER_NAME -p$USER_PASSWD --server=$OSO_SERVER --certificate-authority=$CERT_PATH'
-    sh 'oc project dev'
-  }
 }
