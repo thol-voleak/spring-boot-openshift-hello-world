@@ -1,4 +1,8 @@
 node {
+   tools {
+     maven 'MAVEN_HOME'
+     docker 'DOCKER_HOME'
+   }
   def app
   stage('Build') {
      app = docker.build("s2i/helloworld")
