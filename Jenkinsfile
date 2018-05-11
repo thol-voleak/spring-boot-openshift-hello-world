@@ -9,11 +9,6 @@ pipeline {
               sh 'mvn clean package'
             }
         }
-        stage('Test Docker'){
-            steps{
-              sh 'docker --version'
-            }
-        }
         stage('Test Connect OCP'){
             steps{ 
               sh 'oc login -u$USER_NAME -p$USER_PASSWD --server=$OCP_SERVER --certificate-authority=$CERT_PATH'
