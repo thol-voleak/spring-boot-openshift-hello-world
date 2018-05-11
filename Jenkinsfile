@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test Docker'){
             steps{
-              sh 'docker --version'
+              docker --version
             }
         }
         stage('Test Connect OCP'){
