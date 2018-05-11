@@ -4,17 +4,17 @@ pipeline {
         maven 'M3'
     }
     stages{
-        stage('Build Maven'){
+        stage('Build'){
             steps{
               sh 'mvn clean package'
             }
         }
-        stage('Deployment'){
+        stage('Test Connect OCP'){
             steps{ 
-              sh 'oc login -u$USER_NAME -p$USER_PASSWD --server=$OSO_SERVER --certificate-authority=$CERT_PATH'
-              sh 'oc project demonstration'
-              sh 'oc tag docker-registry.default.svc:5000/demonstration/helloworld-db demonstration/helloworld-db:latest'
-              sh 'oc push demonstration/helloworld-db:latest'
+              sh 'oc login -u$USER_NAME -p$USER_PASSWD --server=$OCP_SERVER --certificate-authority=$CERT_PATH'
+              sh 'oc project ads'
+              sh 'oc get projects'
+              
             }
         }
     }
