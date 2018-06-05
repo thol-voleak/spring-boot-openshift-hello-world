@@ -98,7 +98,7 @@
                             <name>truemoney-repo.truemoney.com.kh:5000/helloworld:latest</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
-                                <dockerFileDir>${project.build.directory}</dockerFileDir>
+                                <!--<dockerFileDir>${project.build.directory}</dockerFileDir> -->
                                 <!--<tags>
                                     <tag>${project.version}</tag>
                                 </tags>-->
