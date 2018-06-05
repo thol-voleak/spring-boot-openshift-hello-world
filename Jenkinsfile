@@ -19,10 +19,10 @@ pipeline {
         
         stage('Deployment'){
             steps{ 
-              sh '/var/lib/jenkins/oc login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
-              sh '/var/lib/jenkins/oc project test1'
-              sh '/var/lib/jenkins/oc get dc'
-              //sh '/var/lib/jenkins/oc rollout latest dc/helloworld -n test1'
+              sh '/var/lib/jenkins_home/oc login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
+              sh '/var/lib/jenkins_home/oc project test1'
+              sh '/var/lib/jenkins_home/oc get dc'
+              //sh '/var/lib/jenkins_home/oc rollout latest dc/helloworld -n test1'
             }
         }
     }
