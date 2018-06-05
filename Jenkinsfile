@@ -19,7 +19,7 @@ pipeline {
         
         stage('Deployment'){
             steps{ 
-              sh '$oc version'
+              sh 'ls /var/lib/jenkins/'
               sh '/var/lib/jenkins/oc'
             }
         }
