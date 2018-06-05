@@ -6,14 +6,13 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-              sh 'echo building'
+              sh 'mvn clean install -DskipTests'
             }
         }
         
         stage('Smoke Test & Docker Build'){
             steps{
-              sh 'echo testing'
-              //sh 'mvn clean install docker:build docker:push'
+              sh 'mvn clean install docker:build docker:push'
             }
         }
         
