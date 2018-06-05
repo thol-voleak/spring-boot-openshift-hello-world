@@ -92,10 +92,10 @@
                 <configuration>
                     <dockerHost>tcp://192.168.168.112:2375</dockerHost>
                     <verbose>true</verbose>
-                    <registry>truemoney-repo.truemoney.com.kh:5000</registry>
+                    <registry>docker-registry.default.svc:5000</registry>
                     <images>
                         <image>
-                            <name>truemoney-repo.truemoney.com.kh:5000/helloworld:latest</name>
+                            <name>docker-registry.default.svc:5000/test1/helloworld:latest</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
