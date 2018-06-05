@@ -74,22 +74,23 @@
                 </configuration>
             </plugin>
 -->
-            <plugin>
+	   <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.23.0</version>
                 <configuration>
-                    <dockerHost>https://docker-registry-default.apps.master-ocp.truemoney.com.kh</dockerHost>
+                    <dockerHost>tcp://192.168.168.112:2375</dockerHost>
                     <verbose>true</verbose>
+                    <registry>truemoney-repo.truemoney.com.kh:5000</registry>
                     <images>
                         <image>
-                            <name>${project.artifactId}</name>
-                            <alias>${project.artifactId}</alias>
+                            <name>truemoney-repo.truemoney.com.kh:5000/helloworld:latest</name>
+                            <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
-                                <tags>
-                                    <tag>latest</tag>
-                                </tags>
+                                <!--<tags>
+                                    <tag>${project.version}</tag>
+                                </tags>-->
                             </build>
                         </image>
                     </images>
