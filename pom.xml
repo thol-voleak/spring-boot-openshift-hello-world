@@ -92,10 +92,10 @@
                 <configuration>
                     <dockerHost>tcp://192.168.168.112:2375</dockerHost>
                     <verbose>true</verbose>
-                    <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
+                    <registry>10.128.0.226:5000</registry>
                     <images>
                         <image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/helloworld:latest</name>
+                            <name>10.128.0.226:5000/test1/helloworld:latest</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
