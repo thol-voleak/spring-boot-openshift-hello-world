@@ -1,6 +1,6 @@
 FROM openjdk:8-slim
 MAINTAINER voleak thol.voleak@ascendcorp.com
-COPY target/@project.build.finalName@.jar target/@project.build.finalName@.jar
+COPY @project.build.finalName@.jar @project.build.finalName@.jar
 VOLUME /opt/tomcat/logs
 LABEL release-date="@timestamp@"
 EXPOSE 8080
