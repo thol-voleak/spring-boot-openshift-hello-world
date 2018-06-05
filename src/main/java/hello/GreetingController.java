@@ -29,7 +29,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getHealthz() {
-        return "ok";
+        return "ok from voleak";
     }
     
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
