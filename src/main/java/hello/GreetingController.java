@@ -32,6 +32,18 @@ public class GreetingController {
         return "ok";
     }
     
+    @ApiOperation(value = "getGreeting", nickname = "getGreeting")
+    @RequestMapping(method = RequestMethod.GET, path = "/test", produces = "application/json")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = Greeting.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
+    public String test() {
+        return "hellow world from mr.thol voleak";
+    }
+    
     
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
     @RequestMapping(method = RequestMethod.GET, path = "/", produces = "application/json")
