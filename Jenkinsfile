@@ -22,7 +22,7 @@ pipeline {
               sh '/var/jenkins_home/oc login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
               sh '/var/jenkins_home/oc project test1'
               sh '/var/jenkins_home/oc get dc'
-              sh '/var/jenkins_home/oc rollout latest dc/helloworld -n test1'
+              //sh '/var/jenkins_home/oc rollout latest dc/helloworld -n test1'
             }
         }
     }
