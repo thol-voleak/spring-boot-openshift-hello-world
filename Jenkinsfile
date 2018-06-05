@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-              sh 'mvn clean install -DskipTests'
+              sh 'echo building'
             }
         }
         
@@ -19,8 +19,7 @@ pipeline {
         
         stage('Deployment'){
             steps{ 
-              sh 'ls /var/lib/jenkins/'
-              sh '/var/lib/jenkins/oc'
+              sh '/var/lib/jenkins/oc version'
             }
         }
     }
