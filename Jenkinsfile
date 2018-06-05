@@ -12,15 +12,15 @@ pipeline {
         
         stage('Smoke Test & Docker Build'){
             steps{
+              sh 'echo testing'
               //sh 'mvn clean install docker:build docker:push'
             }
         }
         
         stage('Deployment'){
-        
             steps{ 
-              //sh '$oc version'
-              //sh '/var/lib/jenkins/oc'
+              sh '$oc version'
+              sh '/var/lib/jenkins/oc'
             }
         }
     }
