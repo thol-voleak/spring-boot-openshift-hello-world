@@ -12,7 +12,8 @@ pipeline {
         
         stage('Smoke Test & Docker Build'){
             steps{
-              sh 'mvn clean install docker:build docker:push'
+              sh 'echo Test'
+              //sh 'mvn clean install docker:build docker:push'
             }
         }
         
