@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.lipatkin.experiments</groupId>
-    <artifactId>spring-boot-hello-world</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <artifactId>helloworld</artifactId>
+    <version>1.0.0</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -55,7 +55,6 @@
         <java.version>1.8</java.version>
     </properties>
 
-
     <build>
 	<resources>
             <resource>
@@ -95,7 +94,17 @@
                     <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
                     <images>
                         <image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/helloworld:latest</name>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:latest</name>
+                            <!--<alias>${project.artifactId}</alias>-->
+                            <build>
+                                <dockerFileDir>${project.build.directory}</dockerFileDir>
+                                <!--<tags>
+                                    <tag>${project.version}</tag>
+                                </tags>-->
+                            </build>
+			</image>
+			<image>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:${project.version}</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
