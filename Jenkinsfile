@@ -17,10 +17,7 @@ pipeline {
             }
         }
         
-        stage('Deployment'){
-            //environment {
-              //OC =  '/var/jenkins_home/oc'
-            //}  
+        stage('Deployment'){ 
             steps{ 
               sh '$OC version'
               sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
