@@ -25,6 +25,14 @@ pipeline {
               sh '$OC rollout latest dc/helloworld -n test1'
             }
         }
+        stage('Test Trigger'){
+          triggers {
+            cron('H */10 * * 1-5')
+          }
+          steps{
+            sh 'echo it time to run'
+          }
+        }
     }
     post { 
         always { 
