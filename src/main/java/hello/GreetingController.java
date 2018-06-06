@@ -41,7 +41,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest() {
-        return "hellow world from mr.thol voleak zzzzzzzzzz";
+        return "hellow world from mr.thol voleak (version 1.0.1)";
     }
     
     
