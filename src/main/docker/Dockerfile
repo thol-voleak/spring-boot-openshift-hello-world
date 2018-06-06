@@ -1,5 +1,6 @@
 FROM openjdk:8-slim
 MAINTAINER voleak thol.voleak@ascendcorp.com
+Vendor=CentOS
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
 VOLUME /opt/tomcat/logs
 LABEL release-date="@timestamp@"
