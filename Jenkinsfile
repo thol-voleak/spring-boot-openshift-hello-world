@@ -28,22 +28,10 @@ pipeline {
     }
     post { 
         success{ 
-        // send build started notifications
-        slackSend (color: 'FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
-
-        // send to HipChat
-        /*hipchatSend (color: 'YELLOW', notify: true,
-            message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})"
-          )
-        */
-        // send to email
-        /*emailext (
-            subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-            body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-              <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-          )
-          */
+          slackSend (color: 'FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
+        }
+        failure {
+          slackSend (color: 'FF8933', message: "Fail build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
         }
     }
 }
