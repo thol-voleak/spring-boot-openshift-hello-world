@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-              sh 'mvn clean install -DskipTest'
+              sh 'mvn clean install -DskipTests'
             }
         }
         
@@ -28,10 +28,10 @@ pipeline {
     }
     post { 
         success{ 
-          slackSend (color: 'FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
+          slackSend (color: '#FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
         failure {
-          slackSend (color: 'FF8933', message: "Fail build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
+          slackSend (color: '#FF8933', message: "Fail build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
     }
 }
