@@ -29,7 +29,7 @@ pipeline {
     post { 
         success{ 
         // send build started notifications
-        slackSend (color: 'Orange', message: "Sucessed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+        slackSend (color: 'FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'")
 
         // send to HipChat
         /*hipchatSend (color: 'YELLOW', notify: true,
