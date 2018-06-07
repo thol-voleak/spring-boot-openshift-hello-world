@@ -30,7 +30,7 @@ pipeline {
     post { 
         success{ 
             //sh 'echo sucessed'
-            slackSend (color: '#FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' \n
+            slackSend (color: '#FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'
                        View Report: (${env.BUILD_URL})")
         }
         failure {
