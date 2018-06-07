@@ -30,11 +30,11 @@ pipeline {
     post { 
         success{ 
             //sh 'echo sucessed'
-            slackSend (color: '#FF8933', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' '\nView Report: (${env.BUILD_URL})'")
+            slackSend (color: '#33ff36', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]\nView Report: (${env.BUILD_URL})\nTest URL: http://helloworld.apps.master-ocp.truemoney.com.kh/test'")
         }
         failure {
-          sh 'echo fail'
-        //  slackSend (color: '#FF8933', message: "Fail build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+          //sh 'echo fail'
+          slackSend (color: '#ff9f33', message: "Failed build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]\nView Report: (${env.BUILD_URL})'")
         }
     }
 }
