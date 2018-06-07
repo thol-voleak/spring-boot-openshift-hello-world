@@ -1,4 +1,4 @@
-FROM openjdk:8-slim
+FROM centos:7
 MAINTAINER voleak thol.voleak@gmail.com
 RUN /bin/bash -c 'touch /var/log/test.log'
 RUN apt-get update & apt-get install vim
