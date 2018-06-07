@@ -41,8 +41,14 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest() {
-        whenWriteStringUsingBufferedWritter_thenCorrect();
-        return "hellow world from mr.thol voleak (version 1.0.3)";
+       String message = "hellow world from mr.thol voleak (version 1.0.3)";
+        try{
+            String str = "Hello";
+            BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
+            writer.write(str);
+            writer.close();
+        }catch(IOException e){message = e.printStackTrace()}
+        return message;
     }
     
     
