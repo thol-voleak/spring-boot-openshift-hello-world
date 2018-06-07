@@ -47,7 +47,7 @@ public class GreetingController {
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
             writer.write(str);
             writer.close();
-        }catch(IOException e){message = e.printStackTrace()}
+        }catch(IOException e){message = e.printStackTrace();}
         return message;
     }
     
