@@ -45,7 +45,7 @@ public class GreetingController {
         String message = "hellow world from mr.thol voleak ";
         try{
             Properties prop = new Properties();
-            InputStream  input = new FileInputStream("config.properties");
+            InputStream  input = new FileInputStream("project.properties");
             prop.load(input);
             String version = prop.getProperty("project.version");
             message = message + version;
