@@ -95,7 +95,7 @@
                     <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
                     <images>
                         <image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${properties.app.name}:latest</name>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:latest</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
@@ -105,7 +105,7 @@
                             </build>
 			</image>
 			<image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${properties.app.name}:${properties.app.version}</name>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:${project.version}</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
