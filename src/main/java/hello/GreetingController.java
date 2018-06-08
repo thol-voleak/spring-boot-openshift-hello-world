@@ -44,10 +44,10 @@ public class GreetingController {
     public String getTest(){
         String message = "hellow world from mr.thol voleak ";
         try{
-            java.io.InputStream is = this.getClass().getResourceAsStream("pom.properties");
+            java.io.InputStream is = this.getClass().getResourceAsStream("project.properties");
             java.util.Properties p = new Properties();
             p.load(is);
-            String version = p.getProperty("couchbase-cache-client.version");
+            String version = p.getProperty("project.version");
             message = message + version;
             /*String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
