@@ -49,11 +49,11 @@ public class GreetingController {
             p.load(is);
             String version = p.getProperty("project.version");
             message = message + version;
-            String str = "Hello";
+            /*String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
             writer.write(str);
-            writer.close();
-        }catch(Exception e){message=e.getMessage();}
+            writer.close();*/
+        }catch(Exception e){message=e.getMessage();e.printStackTrace();}
         return message;
     }
     
