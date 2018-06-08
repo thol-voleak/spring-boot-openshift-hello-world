@@ -44,10 +44,10 @@ public class GreetingController {
     public String getTest(){
         String message = "hellow world from mr.thol voleak ";
         try{
-            java.io.InputStream is = this.getClass().getResourceAsStream("project.properties");
-            java.util.Properties p = new Properties();
-            p.load(is);
-            String version = p.getProperty("project.version");
+            Properties prop = new Properties();
+            InputStream  input = new FileInputStream("config.properties");
+            prop.load(input);
+            String version = prop.getProperty("project.version");
             message = message + version;
             /*String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
