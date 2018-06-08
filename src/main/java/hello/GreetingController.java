@@ -42,13 +42,13 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
+        String message = "hellow world from mr.thol voleak ";
         try{
             java.io.InputStream is = this.getClass().getResourceAsStream("pom.properties");
             java.util.Properties p = new Properties();
             p.load(is);
             String version = p.getProperty("project.version");
-            String message = "hellow world from mr.thol voleak " + version ;
-            
+            message = message + version;
             String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
             writer.write(str);
