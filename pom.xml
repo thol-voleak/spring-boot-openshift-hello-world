@@ -52,7 +52,9 @@
     </dependencies>
 
     <properties>
-        <java.version>1.8</java.version>
+     	<java.version>1.8</java.version>
+	<app.name>helloworld</appname>
+    	<app.version>2.0.1</appversion>
     </properties>
 
     <build>
