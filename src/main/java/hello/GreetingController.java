@@ -41,7 +41,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest() {
-       String message = "hellow world from mr.thol voleak env.get("project.version")";
+       String message = "hellow world from mr.thol voleak System.getProperty("project.version")";
         try{
             String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
