@@ -47,7 +47,7 @@ public class GreetingController {
             java.io.InputStream is = this.getClass().getResourceAsStream("pom.properties");
             java.util.Properties p = new Properties();
             p.load(is);
-            String version = p.getProperty("project.version");
+            String version = p.getProperty("couchbase-cache-client.version");
             message = message + version;
             /*String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
