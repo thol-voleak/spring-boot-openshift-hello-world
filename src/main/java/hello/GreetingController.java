@@ -41,9 +41,9 @@ public class GreetingController {
             @ApiResponse(code = 403, message = "Forbidden"),
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
-    public String getTest() {
-        InputStream is = this.getClass().getResourceAsStream("pom.properties");
-        Properties p = new Properties();
+    public String getTest() throws Exception {
+        java.io.InputStream is = this.getClass().getResourceAsStream("pom.properties");
+        java.util.Properties p = new Properties();
         p.load(is);
         String version = p.getProperty("project.version");
         String message = "hellow world from mr.thol voleak " + version ;
