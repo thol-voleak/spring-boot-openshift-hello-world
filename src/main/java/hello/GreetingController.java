@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.*;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.*;
 
 @RestController
 public class GreetingController {
@@ -41,7 +41,10 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest() {
-        String version = System.getProperty("project.version");
+        InputStream is = this.getClass().getResourceAsStream("pom.properties");
+        Properties p = new Properties();
+        p.load(is);
+        String version = p.getProperty("project.version");
         String message = "hellow world from mr.thol voleak " + version ;
         try{
             String str = "Hello";
