@@ -3,10 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.lipatkin.experiments</groupId>
-    <artifactId>helloworld</artifactId>
-    <version>2.0.1</version>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -96,7 +92,7 @@
                     <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
                     <images>
                         <image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:latest</name>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${properties.app.name}:latest</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
@@ -106,7 +102,7 @@
                             </build>
 			</image>
 			<image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:${project.version}</name>
+                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${properties.app.name}:${properties.app.version}</name>
                             <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
@@ -130,7 +126,7 @@
                         <goal>write-project-properties</goal>
                     </goals>
                     <configuration>
-                        <outputFile>${project.build.outputDirectory}/pom.properties</outputFile>
+                        <outputFile>${project.build.outputDirectory}/config.properties</outputFile>
                     </configuration>
                 </execution>
             </executions>
