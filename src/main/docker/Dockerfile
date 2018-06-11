@@ -1,7 +1,8 @@
 FROM openjdk:8-slim
 MAINTAINER Thol-Voleak <thol.voleak@gmail.com>
 RUN apt-get update && apt-get install -y \
-curl && vim
+curl && \ 
+vim
 CMD /bin/bash
 ENV TZ=Asia/Phnom_Penh
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone;touch /var/log/test.log ; chmod 777 /var/log/test.log
