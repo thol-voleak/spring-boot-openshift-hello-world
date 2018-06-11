@@ -20,7 +20,7 @@ public class GreetingController {
 
     private static final String template = "Hello world from, %s!";
     private final AtomicLong counter = new AtomicLong();
-
+   
     @RequestMapping(method = RequestMethod.GET, path = "/check-deployment", produces = "application/json")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Greeting.class),
