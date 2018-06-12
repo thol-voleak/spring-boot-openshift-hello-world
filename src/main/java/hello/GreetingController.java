@@ -60,10 +60,10 @@ public class GreetingController {
             prop.load(input);
             String version = prop.getProperty("app.version");
             message = message + version;
-            /*String str = "Hello";
-            BufferedWriter writer = new BufferedWriter(new FileWriter("/var/log/test.log"));
+            String str = "Hello";
+            BufferedWriter writer = new BufferedWriter(new FileWriter("/opt/tomcat/logs/test.log"));
             writer.write(str);
-            writer.close();*/
+            writer.close();
         }catch(Exception e){message=e.getMessage();e.printStackTrace();}
         return message;
     }
