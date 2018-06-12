@@ -20,18 +20,7 @@ public class GreetingController {
 
     private static final String template = "Hello world from, %s!";
     private final AtomicLong counter = new AtomicLong();
-   
-    @RequestMapping(method = RequestMethod.GET, path = "/check-deployment", produces = "application/json")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success", response = Greeting.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
-    public Boolean getCheckDeployment() {
-        return true;
-    }
-    
+       
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
     @RequestMapping(method = RequestMethod.GET, path = "/healthz", produces = "application/json")
     @ApiResponses(value = {
@@ -55,11 +44,6 @@ public class GreetingController {
     public String getTest(){
         String message = "hellow world from mr.thol voleak ";
         try{
-            Properties prop = new Properties();
-            InputStream  input = new FileInputStream("config.properties");
-            prop.load(input);
-            String version = prop.getProperty("app.version");
-            message = message + version;
             String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/opt/tomcat/logs/test.log"));
             writer.write(str);
