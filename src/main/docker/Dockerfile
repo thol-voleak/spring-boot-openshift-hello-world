@@ -1,11 +1,7 @@
 FROM openjdk:8-slim
 MAINTAINER Thol-Voleak <thol.voleak@gmail.com>
-RUN apt-get update && apt-get install -y \
-vim curl rpm wget
-CMD /bin/bash
 ENV TZ=Asia/Phnom_Penh
 RUN apt-get update && apt-get install filebeat
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone;mkdir -p /opt/tomcat/logs/;chmod 777 /opt/tomcat/logs
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
 LABEL release-date="@timestamp@"
 EXPOSE 8080
