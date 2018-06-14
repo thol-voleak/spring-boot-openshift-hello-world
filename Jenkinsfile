@@ -3,15 +3,15 @@ pipeline {
     tools {
         maven 'MAVEN_HOME'
     }
-    /*environment {
+    environment {
         PRO_NAME = 'test1'
         APP_NAME = 'service-a'
         IMG_NAME = 'helloworld'
-    }*/
+    }
     stages{
         stage('Build'){
             steps{
-              sh "echo $PRO_NAME and $APP_NAME and $IMG_NAME"
+              sh "echo ${PRO_NAME} and ${APP_NAME} and ${IMG_NAME}"
               sh "echo build"
               //sh "mvn clean install -DskipTests"
             }
