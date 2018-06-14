@@ -3,11 +3,11 @@ pipeline {
     tools {
         maven 'MAVEN_HOME'
     }
-    environment {
+    /*environment {
         PRO_NAME = 'test1'
         APP_NAME = 'service-a'
         IMG_NAME = 'helloworld'
-    }
+    }*/
     stages{
         stage('Build'){
             steps{
