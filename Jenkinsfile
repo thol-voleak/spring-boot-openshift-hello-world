@@ -19,9 +19,8 @@ pipeline {
         
         stage('Deployment'){ 
             steps{ 
-              sh '$OC version'
               sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
-              sh '$OC project ads'
+              sh '$OC project test1'
               sh '$OC rollout latest dc/helloworld -n test1'
               sh '$OC rollout status dc/helloworld'
             }
