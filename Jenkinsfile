@@ -3,24 +3,24 @@ pipeline {
     tools {
         maven 'MAVEN_HOME'
     }
-    parameters {
-        string(name: 'PRO_NAME', defaultValue: 'test1', description: 'Name of project in OCP')
-        string(name: 'APP_NAME', defaultValue: 'service-a', description: 'Name of application in OCP')
-        string(name: 'IMG_NAME', defaultValue: 'helloworld', description: 'Name of image will deploy')
+    environment {
+        PRO_NAME = 'test1'
+        APP_NAME = 'service-a'
+        IMG_NAME = 'helloworld'
     }
     stages{
         stage('Build'){
             steps{
-              sh "echo ${PRO_NAME} and ${APP_NAME} and ${IMG_NAME}"
-              //sh "echo build"
-              sh "mvn clean install -DskipTests"
+              sh "echo $PRO_NAME and $APP_NAME and $IMG_NAME"
+              sh "echo build"
+              //sh "mvn clean install -DskipTests"
             }
         }
         
         stage('Smoke Test+Push'){
             steps{
-              //sh "echo test"
-              sh "$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH"
+              sh "echo test"
+              /*sh "$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH"
               script{
                 try{
                   sh "$OC get project ${PRO_NAME}"
@@ -28,14 +28,14 @@ pipeline {
                   sh "$OC new-project ${PRO_NAME}"
                 }
               }
-              sh "mvn clean install docker:build docker:push"
+              sh "mvn clean install docker:build docker:push"*/
             }
         }
         
         stage('Deployment'){ 
             steps{ 
-              //sh "echo deployment"
-              script{
+              sh "echo deployment"
+              /*script{
                 sh "$OC project ${PRO_NAME}"
                 try{
                   sh "$OC get svc ${APP_NAME}"
@@ -45,7 +45,7 @@ pipeline {
                   sh "$OC new-app test1/${IMG_NAME}:latest name=${APP_NAME}"
                   sh "$OC expose svc/${APP_NAME} --hostname=${APP_NAME}-${PRO_NAME}.apps.$OCP_BASE_URL"
                 }
-              }
+              }*/
             }
         }
     }
