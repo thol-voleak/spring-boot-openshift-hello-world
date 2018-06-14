@@ -42,7 +42,7 @@ pipeline {
                   sh "$OC rollout latest dc/${APP_NAME} -n test1"
                   sh "$OC rollout status dc/${APP_NAME}"
                 }catch(Exception ex){
-                  sh "$OC new-app test1/${IMG_NAME}:latest name=${APP_NAME}"
+                  sh "$OC new-app ${PRO_NAME}/${IMG_NAME}:latest --name=${APP_NAME}"
                   sh "$OC expose svc/${APP_NAME} --hostname=${APP_NAME}-${PRO_NAME}.apps.$OCP_BASE_URL"
                 }
               }
