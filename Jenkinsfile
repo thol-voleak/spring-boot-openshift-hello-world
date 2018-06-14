@@ -31,7 +31,7 @@ pipeline {
               script{
                 sh '$OC project test1'
                 try{
-                  sh 'oc get svc service-a'
+                  sh '$OC get svc service-a'
                   sh '$OC rollout latest dc/service-a -n test1'
                   sh '$OC rollout status dc/service-a'
                 }catch(Exception ex){
