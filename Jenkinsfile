@@ -19,7 +19,7 @@ pipeline {
                 def proname = sh (script: '$OC get project test1', returnStdout: true).trim()
                 sh "echo ${proname.substring(0,5)}"
               }
-              "//sh 'mvn clean install docker:build docker:push'
+              //sh 'mvn clean install docker:build docker:push'
             }
         }
         
