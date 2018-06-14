@@ -43,12 +43,12 @@ public class GreetingController {
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
         String message = System.getenv("MSG");
-        try{
+        /* try{
             String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/opt/tomcat/logs/test.log"));
             writer.write(str);
             writer.close();
-        }catch(Exception e){message=e.getMessage();e.printStackTrace();}
+        }catch(Exception e){message=e.getMessage();e.printStackTrace();}*/
         return message;
     }
     
