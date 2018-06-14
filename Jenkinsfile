@@ -28,13 +28,15 @@ pipeline {
         stage('Deployment'){ 
             steps{ 
               //sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
-              sh '$OC project test1'
-              try{
-                sh 'oc get svc service-a'
-                sh '$OC rollout latest dc/service-a -n test1'
-                sh '$OC rollout status dc/service-a'
-              }catch(Exception ex){
-                sh '$OC new-app testq/helloworld:latest'
+              script{
+                sh '$OC project test1'
+                try{
+                  sh 'oc get svc service-a'
+                  sh '$OC rollout latest dc/service-a -n test1'
+                  sh '$OC rollout status dc/service-a'
+                }catch(Exception ex){
+                  sh '$OC new-app testq/helloworld:latest'
+                }
               }
             }
         }
