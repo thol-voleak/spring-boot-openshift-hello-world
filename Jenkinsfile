@@ -17,8 +17,9 @@ pipeline {
               sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
               script{
                 def proname = sh (script: '$OC get project test1', returnStdout: true).trim()
-                def abc = proname.substring(0,5)
-                sh "echo ${abc}"
+                //def abc = proname.substring(0,5)
+                sh 'echo xxxxxxxxxxxxxxx'
+                sh "echo ${proname}"
               }
               //sh 'mvn clean install docker:build docker:push'
             }
