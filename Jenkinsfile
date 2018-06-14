@@ -5,7 +5,7 @@ pipeline {
     }
     parameters {
         string(name: 'PRO_NAME', defaultValue: 'test1', description: 'Name of project in OCP')
-        string(name: 'APP_NAME', defaultValue: 'service-1', description: 'Name of application in OCP')
+        string(name: 'APP_NAME', defaultValue: 'service-a', description: 'Name of application in OCP')
         string(name: 'IMG_NAME', defaultValue: 'helloworld', description: 'Name of image will deploy')
     }
     stages{
