@@ -90,30 +90,16 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.23.0</version>
                 <configuration>
-                    <dockerHost>tcp://192.168.168.112:2375</dockerHost>
+                    <dockerHost>tcp://192.168.106.20:2375</dockerHost>
                     <verbose>true</verbose>
                     <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
                     <images>
                         <image>
                             <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:latest</name>
-                            <!--<alias>${project.artifactId}</alias>-->
                             <build>
                                 <dockerFileDir>${project.build.directory}</dockerFileDir>
-                                <!--<tags>
-                                    <tag>${project.version}</tag>
-                                </tags>-->
                             </build>
 			</image>
-			<image>
-                            <name>docker-registry-default.apps.master-ocp.truemoney.com.kh/test1/${project.artifactId}:${project.version}</name>
-                            <!--<alias>${project.artifactId}</alias>-->
-                            <build>
-                                <dockerFileDir>${project.build.directory}</dockerFileDir>
-                                <!--<tags>
-                                    <tag>${project.version}</tag>
-                                </tags>-->
-                            </build>
-                        </image>
                     </images>
                 </configuration>
             </plugin>
