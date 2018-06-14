@@ -43,7 +43,7 @@ pipeline {
                   sh "$OC rollout status dc/${APP_NAME}"
                 }catch(Exception ex){
                   sh "$OC new-app test1/${IMG_NAME}:latest name=${APP_NAME}"
-                  sh "$OC expose svc/${APP_NAME} --hostname=${APP_NAME}-${PRO_NAME}.apps.$BASE_URL"
+                  sh "$OC expose svc/${APP_NAME} --hostname=${APP_NAME}-${PRO_NAME}.apps.$OCP_BASE_URL"
                 }
               }
             }
@@ -52,7 +52,7 @@ pipeline {
     post { 
         success{ 
             //sh 'echo sucessed'
-            slackSend (color: '#33ff36', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]\nView Report: (${env.BUILD_URL})\nTest URL: (http://${APP_NAME}-${PRO_NAME}.apps.$BASE_URL/test)'")
+            slackSend (color: '#33ff36', message: "Sucessed built: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]\nView Report: (${env.BUILD_URL})\nTest URL: (http://${APP_NAME}-${PRO_NAME}.apps.$OCP_BASE_URL/test)'")
         }
         failure {
           //sh 'echo fail'
