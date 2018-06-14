@@ -12,15 +12,15 @@ pipeline {
         stage('Build'){
             steps{
               sh "echo ${PRO_NAME} and ${APP_NAME} and ${IMG_NAME}"
-              sh "echo build"
-              //sh "mvn clean install -DskipTests"
+              //sh "echo build"
+              sh "mvn clean install -DskipTests"
             }
         }
         
         stage('Smoke Test+Push'){
             steps{
-              sh "echo test"
-              /*sh "$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH"
+              //sh "echo test"
+              sh "$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH"
               script{
                 try{
                   sh "$OC get project ${PRO_NAME}"
@@ -28,14 +28,14 @@ pipeline {
                   sh "$OC new-project ${PRO_NAME}"
                 }
               }
-              sh "mvn clean install docker:build docker:push"*/
+              sh "mvn clean install docker:build docker:push"
             }
         }
         
         stage('Deployment'){ 
             steps{ 
-              sh "echo deployment"
-              /*script{
+              //sh "echo deployment"
+              script{
                 sh "$OC project ${PRO_NAME}"
                 try{
                   sh "$OC get svc ${APP_NAME}"
@@ -45,7 +45,7 @@ pipeline {
                   sh "$OC new-app test1/${IMG_NAME}:latest name=${APP_NAME}"
                   sh "$OC expose svc/${APP_NAME} --hostname=${APP_NAME}-${PRO_NAME}.apps.$OCP_BASE_URL"
                 }
-              }*/
+              }
             }
         }
     }
