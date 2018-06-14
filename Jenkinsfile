@@ -36,6 +36,7 @@ pipeline {
                   sh '$OC rollout status dc/service-a'
                 }catch(Exception ex){
                   sh '$OC new-app test1/helloworld:latest'
+                  sh '$OC expose svc/service-a --hostname=service-a-test1.apps.master-ocp.truemoney.com.kh'
                 }
               }
             }
