@@ -10,7 +10,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-              sh "echo ${PRO_NAME} & ${APP_NAME}"
+              sh "echo ${PRO_NAME} and ${APP_NAME}"
               sh "echo build"
               //sh 'mvn clean install -DskipTests'
             }
