@@ -6,8 +6,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-              sh 'echo build'
-              //sh 'mvn clean install -DskipTests'
+              sh 'mvn clean install -DskipTests'
             }
         }
         
@@ -17,15 +16,12 @@ pipeline {
               sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
               script{
                 try{
-                  def proname = sh (script: '$OC get project test1', returnStdout: true).trim()
+                  sh '$OC get project test1'
                 }catch(Exception ex) {
-                  println("Catching the exception");
+                  sh '$OC new-project test1'
                 }
-                //def abc = proname.substring(0,5)
-                //sh 'echo xxxxxxxxxxxxxxx'
-                //sh "echo ${proname}"
               }
-              //sh 'mvn clean install docker:build docker:push'
+              sh 'mvn clean install docker:build docker:push'
             }
         }
         
@@ -33,8 +29,13 @@ pipeline {
             steps{ 
               //sh '$OC login -u$OCP_USER_NAME -p$OCP_PWD --server=$OCP_SERVER --certificate-authority=$OCP_CERT_PATH'
               sh '$OC project test1'
-              //sh '$OC rollout latest dc/helloworld -n test1'
-              //sh '$OC rollout status dc/helloworld'
+              try{
+                sh 'oc get svc service-a'
+                sh '$OC rollout latest dc/service-a -n test1'
+                sh '$OC rollout status dc/service-a'
+              }catch(Exception ex){
+                sh '$OC new-app testq/helloworld:latest'
+              }
             }
         }
     }
