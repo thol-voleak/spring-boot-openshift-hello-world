@@ -35,7 +35,7 @@ pipeline {
                   sh '$OC rollout latest dc/service-a -n test1'
                   sh '$OC rollout status dc/service-a'
                 }catch(Exception ex){
-                  sh '$OC new-app testq/helloworld:latest'
+                  sh '$OC new-app test1/helloworld:latest'
                 }
               }
             }
