@@ -42,7 +42,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
-        String message = System.getenv("MSG");
+        String message = "hahahah";
         /* try{
             String str = "Hello";
             BufferedWriter writer = new BufferedWriter(new FileWriter("/opt/tomcat/logs/test.log"));
