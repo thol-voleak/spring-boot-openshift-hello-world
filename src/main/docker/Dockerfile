@@ -5,7 +5,7 @@ ENV FILEBEAT_VERSION=1.2.3 \
     FILEBEAT_SHA1=3fde7f5f5ea837140965a193bbb387c131c16d9c
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
 RUN apt-get update && apt-get install -y \
-curl
+vim
 RUN set -x && \
   apt-get update && \
   apt-get install -y wget && \
