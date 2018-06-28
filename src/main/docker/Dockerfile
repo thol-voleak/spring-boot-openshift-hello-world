@@ -4,7 +4,7 @@ ENV TZ=Asia/Phnom_Penh
 ENV FILEBEAT_VERSION=1.2.3 \
     FILEBEAT_SHA1=3fde7f5f5ea837140965a193bbb387c131c16d9c
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
-COPY filebeat.yml /etc/
+COPY @project.build.filebeat.yml /etc/
 RUN apt-get update && apt-get install -y \
 vim
 RUN set -x && \
