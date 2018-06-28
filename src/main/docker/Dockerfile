@@ -20,16 +20,7 @@ RUN set -x && \
   apt-get purge -y wget && \
   apt-get autoremove -y && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN cat <<EOF > /etc/filebeat.yml 
-filebeat.prospectors:
-- input_type: log
-  paths:    
-   - /opt/tomcat/logs/trueservice.log
-  include_lines:  ["^abc","^edc"]
-output.logstash:
-  hosts: ["192.168.168.117:5044"]
-  index: gateway_agent_app
-EOF
+RUN mv /var/jenkins_home/filebeat.yml /etc/
 CMD /bin/bash
 LABEL release-date="@timestamp@"
 EXPOSE 8080
