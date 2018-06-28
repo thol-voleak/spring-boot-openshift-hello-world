@@ -15,7 +15,6 @@ RUN set -x && \
   tar xzvf filebeat.tar.gz && \
   mv filebeat-* filebeat && \
   cd filebeat && \
-  cat /var/jenkins_home/filebeat.yml && \
   cp filebeat /bin && \
   cd /etc && \
   apt-get purge -y wget && \
