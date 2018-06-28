@@ -90,7 +90,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.23.0</version>
                 <configuration>
-                    <dockerHost>tcp://tmn-tools.truemoney.com.kh:2375</dockerHost>
+                    <dockerHost>tcp://192.168.168.112:2375</dockerHost>
                     <verbose>true</verbose>
                     <registry>docker-registry-default.apps.master-ocp.truemoney.com.kh</registry>
                     <images>
