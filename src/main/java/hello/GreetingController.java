@@ -42,13 +42,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
-        String message = "hahahah";
-        /* try{
-            String str = "Hello";
-            BufferedWriter writer = new BufferedWriter(new FileWriter("/opt/tomcat/logs/test.log"));
-            writer.write(str);
-            writer.close();
-        }catch(Exception e){message=e.getMessage();e.printStackTrace();}*/
+        String message = "{\"timestamp\":1531387905912,\"status\":\"F\",\"error\":\"Not Found\",\"message\":\"No message available\"}";
         return message;
     }
     
