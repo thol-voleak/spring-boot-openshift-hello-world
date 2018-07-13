@@ -34,7 +34,7 @@ public class GreetingController {
     }
     
     @ApiOperation(value = "getGreeting", nickname = "getGreeting")
-    @RequestMapping(method = RequestMethod.GET, path = "/test", produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, path = "/test", produces = "application/json")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Greeting.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
