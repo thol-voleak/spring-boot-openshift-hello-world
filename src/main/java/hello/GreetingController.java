@@ -42,7 +42,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
-        String message = "{\"timestamp\":1531387905912,\"status\":\"F\",\"error\":\"Not Found\",\"errorCode\":\"M00125\",\"onlyMessage\":\"No message available\"}";
+        String message = "{\"status\":\"F\",\"errorCode\":\"E00026\",\"message\":\"E00026. System Encourage Level Not Invoke\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
         return message;
     }
     
