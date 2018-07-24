@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.Properties;
+import src.main.java.hello.RequestDTO;
 
 @RestController
 public class GreetingController {
@@ -42,7 +43,7 @@ public class GreetingController {
             @ApiResponse(code = 403, message = "Forbidden"),
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
-    public String getTest(HttpServletRequest request,@RequestBody final String requestDTO){
+    public String getTest(HttpServletRequest request,@RequestBody final RequestDTO requestDTO){
         
         String message = "{\"status\":\"F\",\"errorCode\":\"E00026\",\"message\":\"E00026. System Encourage Level Not Invoke\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
         return requestDTO;
