@@ -1,10 +1,7 @@
 package hello;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.util.HashMap;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestDTO extends MainRequestDTO {
 	private String accountId;
 	private String cardId;
