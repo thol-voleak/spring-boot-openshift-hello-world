@@ -5,6 +5,7 @@ package hello;
  * Date: 2016-08-21
  * Time: 00:12
  */
+import org.springframework.web.bind.annotation.Request
 import javax.servlet.http.HttpServletRequest;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.RequestMapping;
