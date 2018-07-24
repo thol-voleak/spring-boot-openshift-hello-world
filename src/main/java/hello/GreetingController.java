@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.Properties;
-
+import src.main.java.hello.*;
 
 @RestController
 public class GreetingController {
