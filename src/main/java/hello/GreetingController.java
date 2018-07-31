@@ -45,7 +45,7 @@ public class GreetingController {
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
         
-        String message = "{\"status\":\"T\",\"errorCode\":\"E00026\",\"message\":\"E00026. System Encourage Level Not Invoke\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
+        String message = "{\"status\":true,\"errorCode\":\"E00026\",\"message\":\"E00026. System Encourage Level Not Invoke\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
         return message;
     }
     
