@@ -44,7 +44,8 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getTest(){
-        String message = "{\"status\":\"T\",\"errorCode\":\"E00026,\"message\":\"E00026. System Encourage Level Not Invoke !\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
+        String message = "{\"status\":\"F\",\"errorCode\":\"S00001\",\"message\":\"S00001.Pls Run this Function with Crond !\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"S00001\":null,\"requestId\":\"2018072600002555\",\"messageKh\":\"S00001.Pls Run this Function with Crond !\",\"dataGateway\":null,\"data\":null,\"onlyMessage\":\"Success\"}";
+        //String message = "{\"status\":\"T\",\"errorCode\":\"E00026,\"message\":\"E00026. System Encourage Level Not Invoke !\",\"serviceId\":null,\"step\":null,\"khmer\":null,\"requestId\":\"1531976169924\",\"data\":null,\"onlyMessage\":\"System Encourage Level Not Invoke\"}";
         return message;
     }
     
