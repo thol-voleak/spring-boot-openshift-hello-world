@@ -2,6 +2,7 @@ FROM openjdk:8-slim
 MAINTAINER Thol-Voleak <thol.voleak@gmail.com>
 ENV TZ=Asia/Phnom_Penh
 #COPY . /apps
+RUN pwd
 WORKDIR .
 RUN pwd
 COPY target/*.jar deployment.jar
