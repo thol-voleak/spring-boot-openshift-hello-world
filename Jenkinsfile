@@ -15,7 +15,8 @@ pipeline {
             }
             steps{
                 sh "docker --version"
-                sh "docker build -t myapps:latest ."
+                sh "pwd"
+                //sh "docker build -t myapps:latest ."
             }
         }
 
