@@ -15,6 +15,7 @@ pipeline {
             }
             steps{
                 sh "docker --version"
+                sh "ls"
             }
         }
 
