@@ -15,7 +15,7 @@ pipeline {
             }
             steps{
                 sh "docker --version"
-                sh "ls"
+                sh "docker build -t myapps:latest ."
             }
         }
 
