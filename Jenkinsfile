@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Package'){
             steps{ 
-                sh "mvn clean install -Dregistry=${REGISTRY_URL}"
+                sh "mvn clean install"
             }
         }
         stage('docker test'){
