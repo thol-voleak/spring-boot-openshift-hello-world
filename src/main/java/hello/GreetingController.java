@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.Properties;
+import java.lang.*;
 
 
 @RestController
@@ -32,6 +33,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getHealthz() {
+        Thread.sleep(300000)
         return "ok from voleak";
     }
     
