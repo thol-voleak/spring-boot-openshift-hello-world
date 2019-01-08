@@ -33,7 +33,7 @@ public class GreetingController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public String getHealthz() throws Exception {
-        Thread.sleep(300000);
+        Thread.sleep(60000);
         return "ok from voleak";
     }
     
@@ -63,7 +63,7 @@ public class GreetingController {
             @ApiResponse(code = 403, message = "Forbidden"),
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws Exception{
         //return new Greeting(counter.incrementAndGet(), String.format(template, name));
         Thread.sleep(60000);
         return new Greeting();
