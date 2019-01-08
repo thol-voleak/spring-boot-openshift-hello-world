@@ -32,7 +32,7 @@ public class GreetingController {
             @ApiResponse(code = 403, message = "Forbidden"),
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
-    public String getHealthz() {
+    public String getHealthz() throws Exception {
         Thread.sleep(300000);
         return "ok from voleak";
     }
