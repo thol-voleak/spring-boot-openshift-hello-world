@@ -15,7 +15,7 @@ public class Greeting {
     private String content;
 
     public Greeting() {
-    	this.id = 1;
+    	this.id = 2;
     	try {
 		this.content = InetAddress.getLocalHost().getHostName();
 	} catch (UnknownHostException e) {
