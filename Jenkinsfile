@@ -15,7 +15,7 @@ pipeline {
             }
             steps{
                 sh "docker --version"
-                sh "pwd"
+                sh "docker pull docker-registry-default.cicd.ascendmoney-dev.internal/test-qa/tts:latest"
                 sh "docker build -t myapps:latest ."
             }
         }
