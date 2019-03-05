@@ -1,4 +1,4 @@
-FROM openjdk:8-slim
+FROM redhat-openjdk-18/openjdk18-openshift
 MAINTAINER kimchheng <kimchheng.kao@ascendcorp.com>
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
 #ENV VAULT_HOST=http://192.168.168.112:8200
