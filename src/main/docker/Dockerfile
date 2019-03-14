@@ -1,9 +1,6 @@
-FROM openjdk:8-slim
-MAINTAINER kimchheng <kimchheng.kao@ascendcorp.com>
+FROM che-stacks/centos-jdk8
+MAINTAINER Thol Voleak <volak.tho@ascendcorp.com>
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
-#ENV VAULT_HOST=http://192.168.168.112:8200
-#ENV VAULT_TOKEN=b9a8acd9-9599-d238-be25-a82be0d48c96
-#ENV REDIS_HOST=192.168.168.112
 VOLUME /opt/tomcat/logs
 #ENV TZ=Asia/Phnom_Penh
 #RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
