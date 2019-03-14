@@ -1,4 +1,4 @@
-FROM redhat-openjdk-18/openjdk18-openshift
+FROM openjdk:8-slim
 MAINTAINER Thol-Voleak <thol.voleak@gmail.com>
 ENV TZ=Asia/Phnom_Penh
 COPY . /apps
