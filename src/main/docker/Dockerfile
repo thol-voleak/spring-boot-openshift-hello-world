@@ -1,4 +1,4 @@
-FROM che-stacks/centos-jdk8
+FROM openjdk:8-slim
 MAINTAINER Thol Voleak <volak.tho@ascendcorp.com>
 COPY @project.build.finalName@.jar @project.build.finalName@.jar
 VOLUME /opt/tomcat/logs
