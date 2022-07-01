@@ -1,4 +1,4 @@
-FROM openjdk:8-slim
+FROM openjdk:19-jdk
 MAINTAINER Thol-Voleak <thol.voleak@gmail.com>
 ENV TZ=Asia/Phnom_Penh
 COPY . /apps
